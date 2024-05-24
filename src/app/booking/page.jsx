@@ -169,7 +169,7 @@ function Page() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        area: selectedSpot,
+        area: selectedCamp,
         amount: totalTickets,
       }),
     })
@@ -192,6 +192,7 @@ function Page() {
               } else {
                 setTicketsReserved(false);
                 setSelectedSpot(null);
+                setSelectedCamp(null);
                 setTicketHolders({ regular: [], vip: [] });
                 clearInterval(countdownInterval);
                 setMinutes(5);
@@ -267,7 +268,7 @@ function Page() {
   // If the total tickets are zero or more than the available spots, it resets the selected spot and camp.
   // If the selected spot can accommodate the total tickets, it removes the warning.
   useEffect(() => {
-    const selectedSpotDetails = spots.find((spot) => spot.area === selectedSpot);
+    const selectedSpotDetails = spots.find((spot) => spot.area === selectedCamp);
 
     // Check if the selected spot can accommodate the total tickets
     if (selectedSpotDetails && totalTickets > selectedSpotDetails.available) {
@@ -291,7 +292,7 @@ function Page() {
     ) {
       setWarningCamp(false);
     }
-  }, [totalTickets, selectedSpot, spots, reservationId]);
+  }, [totalTickets, selectedCamp, spots, reservationId]);
 
   // Calculate the total price and number of tickets, and update the allChoices object
   useEffect(() => {
@@ -309,6 +310,7 @@ function Page() {
       vipTickets,
       totalTickets,
       selectedSpot,
+      selectedCamp,
       greenCamping,
       totalPrice,
       twoPersonTents,
@@ -317,7 +319,7 @@ function Page() {
       reservationId,
       email,
     });
-  }, [regularTickets, vipTickets, selectedSpot, greenCamping, totalTickets, twoPersonTents, threePersonTents, ticketHolders, reservationId, email, ,]);
+  }, [regularTickets, vipTickets, selectedSpot, selectedCamp, greenCamping, totalTickets, twoPersonTents, threePersonTents, ticketHolders, reservationId, email, ,]);
 
   // Fetch the available spots from the API on page load
   useEffect(() => {
@@ -365,7 +367,7 @@ function Page() {
         </div>
         {currentSlide !== 5 && (
           <div className="hidden h-full w-7/12 order-2 md:block">
-            <OrderSummary allChoices={allChoices} currentSlide={currentSlide} countdown={countdown} minutes={minutes} seconds={seconds} isPulsing={isPulsing} ticketsReserved={ticketsReserved} totalPrice={totalPrice} regularTickets={regularTickets} vipTickets={vipTickets} selectedSpot={selectedSpot} greenCamping={greenCamping} twoPersonTents={twoPersonTents} threePersonTents={threePersonTents} totalTickets={totalTickets} />
+            <OrderSummary allChoices={allChoices} currentSlide={currentSlide} countdown={countdown} minutes={minutes} seconds={seconds} isPulsing={isPulsing} ticketsReserved={ticketsReserved} totalPrice={totalPrice} regularTickets={regularTickets} vipTickets={vipTickets} selectedCamp={selectedCamp} setSelectedCamp={setSelectedCamp} greenCamping={greenCamping} twoPersonTents={twoPersonTents} threePersonTents={threePersonTents} totalTickets={totalTickets} />
           </div>
         )}
         <div className="order-1 md:hidden">{currentSlide !== 5 && <MobileOrderSummary allChoices={allChoices} currentSlide={currentSlide} countdown={countdown} minutes={minutes} seconds={seconds} isPulsing={isPulsing} ticketsReserved={ticketsReserved} totalPrice={totalPrice} regularTickets={regularTickets} vipTickets={vipTickets} selectedSpot={selectedSpot} greenCamping={greenCamping} twoPersonTents={twoPersonTents} threePersonTents={threePersonTents} totalTickets={totalTickets} />}</div>

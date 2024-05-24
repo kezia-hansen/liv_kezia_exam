@@ -3,8 +3,8 @@ import styles from "./camping.css";
 import React from "react";
 
 export default function Camp(props) {
-  const { camp, selectedCamp } = props;
-  const isActive = selectedCamp && camp.area === selectedCamp.area;
+  const { camp, selectedSpot } = props;
+  const isActive = selectedSpot && camp.area === selectedSpot.area;
   const [isClicked, setIsClicked] = useState(false);
   const divRef = useRef(null);
 

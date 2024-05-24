@@ -5,24 +5,24 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { url } from "../../../../config";
 
-export default function Camping({ regularTickets, vipTickets, totalTickets, spots, setSelectedSpot, updateTickets, setSelectedCamp, selectedCamp, mapHandleModal, reservationId, warningCamp }) {
+export default function Camping({ regularTickets, vipTickets, totalTickets, spots, setSelectedSpot, selectedSpot, updateTickets, setSelectedCamp, selectedCamp, mapHandleModal, reservationId, warningCamp }) {
   {
-    function chooseSpot(selectedCamp) {
-      const selectedSpotDetails = spots.find((spot) => spot.area === selectedCamp);
+    function chooseSpot(selectedSpot) {
+      const selectedSpotDetails = spots.find((spot) => spot.area === selectedSpot);
 
       if (reservationId) {
         return;
       } else if (selectedSpotDetails.available === 0 || totalTickets > selectedSpotDetails.available) {
-        console.log(selectedCamp);
+        console.log(selectedSpot);
         setSelectedSpot(null);
         setSelectedCamp(null);
       } else {
-        setSelectedSpot(selectedCamp);
+        setSelectedSpot(selectedSpot);
       }
     }
 
     const [dataCamps, setDataCamps] = useState(null);
-    const [selectedCamp, setSelectedCamp] = useState(null);
+    const [selectedSpot, setSelectedCamp] = useState(null);
 
     useEffect(() => {
       const fetchData = async () => {
