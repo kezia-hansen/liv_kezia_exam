@@ -1,7 +1,7 @@
 import React from "react";
 import PlayingTime from "@/components/PlayingTime";
 import BackBtn from "@/components/BackBtn";
-import Spotify from "@/components/Spotify";
+import Spotify from "../../../components/Spotify";
 import Title from "@/components/Title";
 import { url } from "/config";
 export async function generateStaticParams() {
