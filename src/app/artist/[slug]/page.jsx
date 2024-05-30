@@ -1,3 +1,4 @@
+"use effect";
 import React from "react";
 import PlayingTime from "@/components/PlayingTime";
 import BackBtn from "@/components/BackBtn";
