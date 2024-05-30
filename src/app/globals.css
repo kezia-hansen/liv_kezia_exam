@@ -1,40 +1,43 @@
+.countdown,
+.heroflex,
+.map_container {
+  display: flex
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap);
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: url(../../public/img/bubblebg.jpg);
-  background-size: cover;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
+  background: url(../../public/img/bubblebg.jpg) 0 0/cover;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: balance
   }
 }
 
 .countdown {
-  display: flex;
-  padding-left: 12px;
+  padding-left: 12px
 }
 
 .countdown .time {
@@ -42,9 +45,8 @@ body {
   font-weight: 700;
   text-align: center;
   color: #280d7c;
-  font-family: "Syncopate", sans-serif;
-
-  margin: 0 15px;
+  font-family: Syncopate, sans-serif;
+  margin: 0 15px
 }
 
 .countdown .time div {
@@ -53,400 +55,371 @@ body {
   background-color: #280d7c;
   display: grid;
   place-items: center;
-  color: white;
-  border-radius: 0.3rem;
-  font-size: 36px;
+  color: #fff;
+  border-radius: .3rem;
+  font-size: 36px
 }
 
 p {
-  margin: 6px;
+  margin: 6px
 }
 
-/* OVERSKRIFTER */
 .titlecontainer {
   display: flex;
   align-items: center;
   text-align: center;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .titletxt {
   color: #dbc2cf;
-  /* Fallback */
   text-transform: uppercase;
   -webkit-text-fill-color: #280d7c;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ff0a9d;
   letter-spacing: 3px;
-  /* Future-proofing */
   background: linear-gradient(180deg, #fd1995 8.18%, #4e30c5 59.64%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 70px;
+  font-size: 70px
 }
 
 .titleline {
   width: 576px;
   height: 3px;
-  background-color: #fd1995;
-}
-
-.heroflex {
-  display: flex;
+  background-color: #fd1995
 }
 
 .countd {
   background: #fd1995;
   padding-bottom: 130px;
   padding-right: 8px;
-  padding-top: 150px;
+  padding-top: 150px
 }
 
-/************************* BUTTON ****************************************/
 .btn {
-  background: linear-gradient(90deg, #53c9ee 0%, #4c97ec 35%, #4566ea 100%);
+  background: linear-gradient(90deg, #53c9ee 0, #4c97ec 35%, #4566ea 100%);
   border-radius: 20px;
-  border: #daee68 4px solid;
+  border: 4px solid #daee68;
   color: #daee68;
   cursor: pointer;
   font-weight: 700;
   font-display: swap;
   height: 3.5rem;
   padding: 0 2rem;
-  max-width: 10rem;
+  max-width: 10rem
 }
 
 .btn:hover {
   background: #daee68;
-  border: #daee68 4px solid;
-  color: #4c97ec;
+  border: 4px solid #daee68;
+  color: #4c97ec
 }
 
-/************************* FOOTER ****************************************/
 .footer {
-  background: rgba(57, 26, 160, 0.852);
-  padding: 30px 0px;
-  font-family: "Play", sans-serif;
-  text-align: center;
+  background: rgba(57, 26, 160, .852);
+  padding: 30px 0;
+  font-family: Play, sans-serif;
+  text-align: center
 }
 
 .footer .row {
   width: 100%;
-  margin: 1% 0%;
-  padding: 0.6% 0%;
+  margin: 1% 0;
+  padding: .6% 0;
   color: #fff;
-  font-size: 1em;
+  font-size: 1em
 }
 
 .footer .row a {
-  text-decoration: none;
   color: #fff;
-  transition: 0.5s;
-  text-decoration: none;
+  transition: .5s;
+  text-decoration: none
 }
 
 .linksfooter:hover {
   padding: 5px;
-  border-bottom: 2px #fd1995 solid;
+  border-bottom: 2px solid #fd1995
 }
 
 .footer .row ul {
-  width: 100%;
+  width: 100%
 }
 
 .footer .row ul li {
   display: inline-block;
-  margin: 0px 30px;
+  margin: 0 30px
 }
 
 .footer .row a i {
   font-size: 2em;
-  margin: 0% 1%;
+  margin: 0 1%
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   .footer {
     text-align: left;
-    padding: 5%;
+    padding: 5%
   }
 
   .footer .row ul li {
     display: block;
-    margin: 10px 0px;
-    text-align: left;
+    margin: 10px 0;
+    text-align: left
   }
 
   .footer .row a i {
-    margin: 0% 3%;
+    margin: 0 3%
   }
 
   .linksfooter:hover {
     padding: 0;
-    border-bottom: none;
+    border-bottom: none
   }
 }
 
-/************************* MAP OVERVIEW ****************************************/
-
 .map_container {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 32px 16px;
   margin: 16px 0;
   background: #f42d87b1;
-  width: 100%;
+  width: 100%
 }
 
-.map_container > div {
+.ticket,
+.vip {
+  text-align: center;
+  font-family: Syncopate, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr
+}
+
+.map_container>div {
   flex: 1;
-  margin: 16px;
+  margin: 16px
 }
 
 .map_container p {
   font-size: 18px;
   line-height: 1.5;
-  margin-bottom: 16px;
+  margin-bottom: 16px
 }
 
 .map_container img {
   width: 100%;
   max-width: 400px;
-  height: auto;
+  height: auto
 }
 
 .img_container {
   background: #1a0755;
   border: 3px solid #daee68;
   border-radius: 40px;
-  overflow: hidden;
-  /* Ensures the image doesn't overflow the container */
+  overflow: hidden
 }
 
 .img_container img {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  /* Ensures the image covers the container */
+  object-fit: cover
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
+@media (max-width:1200px) {
   .map_container {
-    padding: 24px 12px;
+    padding: 24px 12px
   }
 
   .map_container p {
-    font-size: 16px;
+    font-size: 16px
   }
 
   .map_container img {
-    max-width: 350px;
+    max-width: 350px
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width:992px) {
   .map_container {
-    padding: 16px 8px;
+    padding: 16px 8px
   }
 
-  .map_container > div {
-    margin: 12px;
+  .map_container>div {
+    margin: 12px
   }
 
   .map_container p {
-    font-size: 15px;
+    font-size: 15px
   }
 
   .map_container img {
-    max-width: 300px;
+    max-width: 300px
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .map_container {
     padding: 12px 8px;
-    flex-direction: column;
+    flex-direction: column
   }
 
-  .map_container > div {
-    margin: 8px 0;
+  .map_container>div {
+    margin: 8px 0
   }
 
   .map_container p {
     font-size: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 12px
   }
 
   .map_container img {
-    max-width: 100%;
+    max-width: 100%
   }
 }
 
-@media (max-width: 576px) {
+.threebbl,
+.twobbl {
+  justify-content: center
+}
+
+@media (max-width:576px) {
   .map_container {
-    padding: 8px 4px;
+    padding: 8px 4px
   }
 
   .map_container p {
     font-size: 13px;
-    margin-bottom: 8px;
+    margin-bottom: 8px
   }
 
   .map_container img {
-    max-width: 100%;
+    max-width: 100%
   }
 
   .img_container {
-    border-radius: 30px;
+    border-radius: 30px
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
   .map_container {
-    padding: 4px 2px;
+    padding: 4px 2px
   }
 
   .map_container p {
     font-size: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 6px
   }
 
   .img_container {
-    border-radius: 20px;
+    border-radius: 20px
   }
 }
 
-/******************************** ticket ************************************/
-
 .ticket {
   background: rgb(58 26 160);
-  text-align: center;
   width: 450px;
   height: 550px;
-  border: solid 6px rgb(30 218 230);
+  border: 6px solid rgb(30 218 230);
   border-radius: 60px;
   margin: 30px;
-  font-family: "Syncopate", sans-serif;
   letter-spacing: 2px;
   font-size: 30px;
   color: rgb(30 218 230);
-  font-weight: lighter;
-  display: grid;
-  grid-template-columns: 1fr;
+  font-weight: lighter
 }
 
 .hrendags {
   width: 300px;
   height: 2px;
   background: rgb(30 218 230);
-  margin: auto;
+  margin: auto
 }
 
-.endags {
-  font-weight: 700;
-  margin-bottom: 5px;
-  letter-spacing: 4px;
-}
-
+.endags,
 .fullweek {
   font-weight: 700;
   margin-bottom: 5px;
-  letter-spacing: 4px;
+  letter-spacing: 4px
 }
 
+.price,
 .pris {
   font-weight: 250;
   font-size: 50px;
-  margin-top: 10px;
+  margin-top: 10px
 }
 
-.imgendag {
-  margin: auto;
+.imgendag,
+.imgv {
+  margin: auto
 }
 
 .vip {
-  text-align: center;
   width: 450px;
   height: 550px;
   margin: 30px;
-  font-family: "Syncopate", sans-serif;
   letter-spacing: 2px;
   font-size: 30px;
   color: rgb(218 238 104);
   font-weight: lighter;
   background: linear-gradient(rgb(72 27 165), rgb(72 27 165)) padding-box, linear-gradient(to top, rgb(244 45 133), rgb(218 238 104)) border-box;
   border-radius: 60px;
-  border: 6px solid transparent;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.price {
-  font-weight: 250;
-  font-size: 50px;
-  margin-top: 10px;
+  border: 6px solid transparent
 }
 
 .hrvip {
   width: 300px;
   height: 2px;
   background: rgb(218 238 104);
-  margin: auto;
+  margin: auto
 }
 
-.imgv {
-  margin: auto;
+.ticketh,
+.tickethv {
+  margin-top: 50px;
+  font-size: 50px;
+  color: #280d7c;
+  font-weight: 600
 }
 
 .ticketh {
-  margin-left: 140px;
-  margin-top: 50px;
-  font-size: 50px;
-  color: #280d7c;
-  font-weight: 600;
+  margin-left: 140px
 }
 
 .tickethv {
-  margin-left: 210px;
-  margin-top: 50px;
-  font-size: 50px;
-  color: #280d7c;
-  font-weight: 600;
+  margin-left: 210px
 }
 
-/******************************** BUBBLES ************************************/
 .twobbl {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  gap: 40px
 }
 
 .threebbl {
   display: flex;
-  justify-content: center;
-  gap: 120px;
+  gap: 120px
 }
 
 .bbl_last {
   display: flex;
   justify-content: center;
-  gap: 140px;
+  gap: 140px
 }
 
 .bbl_container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr)
 }
 
 .bbl1 {
-  grid-column: 3/3;
+  grid-column: 3/3
 }
 
 .bbl2 {
-  grid-column: 4/4;
+  grid-column: 4/4
 }
